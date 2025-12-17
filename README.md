@@ -5,7 +5,7 @@ All project files are organized as follows:
 
 sentiment-analysis/
 ├── README.md
-├── cover.jpg
+├── COVER.jpg
 │
 ├── data/
 │   └── sentiment_train.csv
