@@ -1,181 +1,168 @@
 ![Project Cover](COVER.jpg)
 
-## Project Structure
-
-All project files are organized as follows:
-
-sentiment-analysis/
-├── README.md
-├── COVER.jpg
-│
-├── data/
-│   └── sentiment_train.csv
-│
-├── notebook/
-│   └── Sentiment_Analysis_Group06.ipynb
-│
-├── output/
-│   └── Sentiment_Analysis_Group06.html
-│
-├── reports/
-│   ├── Group-6-Sentiment_Analysis.pdf
-│   └── Project_Report_Big_Data.docx
-│
-└── presentation/
-    └── SENTIMENT_ANALYSIS_PRESENTATION.pdf
-## Access Project Files
-
-- 📊 Dataset:  
-  [sentiment_train.csv](sentiment_train.csv)
-
-- 📓 Jupyter Notebook:  
-  [Sentiment_Analysis_Group06.ipynb](Sentiment_Analysis_Group06.ipynb)
-
-- 🌐 HTML Output:  
-  [Sentiment_Analysis_Group06.html](Sentiment_Analysis_Group06.html)
-
-- 📄 Final Report (PDF):  
-  [Group-6-Sentiment_Analysis.pdf](Group-6-Sentiment_Analysis.pdf)
-
-- 📊 Presentation:  
-  [SENTIMENT_ANALYSIS_PRESENTATION.pdf](SENTIMENT_ANALYSIS_PRESENTATION.pdf)
+# Sentiment Analysis – Restaurant Reviews
 
 ## Project Description
+This project builds an end-to-end sentiment analysis pipeline on restaurant review
+text to classify sentiment as **Positive** or **Negative**. The goal is to transform
+unstructured customer feedback into measurable insights that support business
+decisions such as service improvement, complaint tracking, and customer experience
+monitoring.
+
+The project compares a **rule-based NLP approach (VADER)** with a
+**deep learning model (LSTM)** to demonstrate model selection and trade-offs.
+
+---
+
+## Project Structure
+All project files are currently stored in the repository root:
 
 
+---
 
-This project builds an end-to-end sentiment analysis pipeline on restaurant review text to classify sentiment as **Positive** or **Negative**. The goal is to transform unstructured customer feedback into measurable insights that can support business decisions (service improvements, complaint tracking, and customer experience monitoring).
+## Access Project Files
+
+- 📊 **Dataset**  
+  [sentiment_train.csv](sentiment_train.csv)
+
+- 📓 **Jupyter Notebook**  
+  [Sentiment_Analysis_Group06.ipynb](Sentiment_Analysis_Group06.ipynb)
+
+- 🌐 **HTML Output**  
+  [Sentiment_Analysis_Group06.html](Sentiment_Analysis_Group06.html)
+
+- 📄 **Final Report (PDF)**  
+  [Group-6-Sentiment_Analysis.pdf.pdf](Group-6-Sentiment_Analysis.pdf.pdf)
+
+- 📊 **Presentation**  
+  [SENTIMENT_ANALYSIS_PRESENTATION.pdf.pdf](SENTIMENT_ANALYSIS_PRESENTATION.pdf.pdf)
 
 ---
 
 ## Step 1 — Define the Problem
-**Goal:** Predict sentiment from review text.  
-**Business value:** Automatically summarize how customers feel at scale, instead of reading reviews manually.
+**Goal:** Predict customer sentiment from review text.  
+**Business Value:** Automatically summarize customer opinions at scale instead of
+manual review analysis.
 
 ---
 
 ## Step 2 — Data Understanding
-**Dataset:** Restaurant reviews dataset (text + sentiment label).  
-**Target column:** `Polarity`  
-- `0` = Negative  
-- `1` = Positive  
-
-**Text column:** `Sentence` (review text)
+- Dataset: Restaurant reviews with sentiment labels
+- Target column: `Polarity`
+  - `0` = Negative
+  - `1` = Positive
+- Text column: `Sentence`
 
 **Data checks performed:**
-- Confirmed dataset schema and label meaning
-- Verified missing values and duplicates
-- Verified sentiment class distribution (balance)
+- Verified schema and label definitions
+- Checked for missing values and duplicates
+- Confirmed sentiment class distribution
 
 ---
 
 ## Step 3 — Data Cleaning & Text Preprocessing
-Text data is noisy, so preprocessing is required before modeling.
+Text preprocessing was performed to prepare data for modeling:
 
-**Preprocessing steps included:**
-- Convert text to lowercase
-- Remove extra spaces, punctuation noise, and unwanted characters
-- Tokenization (split text into words)
-- Stopword removal (while keeping important negations like *not*, *never*)
-- Optional normalization (lemmatization/stemming depending on the notebook)
+- Converted text to lowercase
+- Removed extra spaces and unwanted characters
+- Tokenized text into individual words
+- Removed stopwords while preserving negations (e.g., *not*, *never*)
+- Applied normalization where appropriate
 
-**Output of this step:** cleaned text ready for feature extraction/model input.
+**Output:** Cleaned text ready for feature extraction and modeling.
 
 ---
 
 ## Step 4 — Exploratory Data Analysis (EDA)
-The project validates the dataset and sentiment behavior before modeling.
+EDA was used to validate data quality and sentiment behavior:
 
-**EDA steps included:**
-- Sentiment distribution (positive vs negative)
-- Basic text patterns (frequent words)
-- Sanity checks that data is usable for training
+- Sentiment distribution analysis
+- Identification of common word patterns
+- Sanity checks to ensure data suitability for modeling
 
-**Why this matters:** prevents training a model on biased or low-quality data.
+**Why this matters:** Prevents training models on biased or low-quality data.
 
 ---
 
 ## Step 5 — Baseline Model (VADER Sentiment Analyzer)
-A fast baseline was built using **VADER**, a rule-based NLP sentiment method.
+A fast baseline model was implemented using **VADER**.
 
-**Why VADER was used:**
+**Why VADER:**
 - No training required
-- Provides quick benchmark performance
-- Useful for short review text
+- Provides quick benchmark results
+- Effective for short text reviews
 
 **Process:**
-- Compute polarity score for each review
-- Convert score into predicted label (positive/negative)
-- Compare predictions with true `Polarity`
+- Computed polarity scores
+- Converted scores to sentiment labels
+- Compared predictions with true labels
 
 **Evaluation:**
 - Confusion matrix
-- Accuracy, precision, recall (to understand trade-offs)
+- Accuracy, precision, and recall
 
 ---
 
 ## Step 6 — Deep Learning Model (LSTM)
-To better capture context and sequential meaning, an **LSTM** model was trained.
+An **LSTM** model was trained to capture sequential and contextual information.
 
-**Why LSTM was used:**
-- Learns patterns from word order and context
-- Handles negations and longer text better than rule-based approaches
+**Why LSTM:**
+- Learns word order and context
+- Handles negations and longer reviews better
 
 **Process:**
-- Convert text into numeric format (tokenization / sequences)
-- Pad sequences for equal length input
-- Train LSTM network with embedding + dropout layers
-- Predict sentiment on test set
+- Text vectorization and tokenization
+- Sequence padding
+- LSTM model with embedding and dropout layers
+- Prediction on test data
 
 **Evaluation:**
-- Test accuracy and performance metrics
+- Test accuracy
 - Confusion matrix
-- Comparison with baseline VADER results
+- Comparison with VADER results
 
 ---
 
 ## Step 7 — Model Comparison & Findings
-Both approaches were compared to show strengths and limitations.
-
 **Summary:**
-- **VADER**: Fast baseline, but struggles with nuanced/complex language
-- **LSTM**: Higher accuracy and better context handling, but needs training and more compute
+- **VADER:** Fast and simple but struggles with complex language
+- **LSTM:** Higher accuracy and better contextual understanding
 
-**Why comparison matters:** shows real analytical thinking and model selection skills.
+**Why comparison matters:** Demonstrates analytical thinking and model selection skills.
 
 ---
 
 ## Step 8 — Outputs & Documentation
-To make the project recruiter-friendly and reproducible, all outputs are included:
-- Notebook with full code and workflow
-- HTML output (easy viewing without running code)
-- PDF report (formal documentation)
-- Presentation (business-ready summary)
-- Dataset stored in the repo for transparency
+To ensure transparency and reproducibility, the repository includes:
+- Jupyter notebook with full workflow
+- HTML output for easy viewing
+- PDF report with detailed documentation
+- Presentation summarizing business insights
+- Dataset used in analysis
 
 ---
 
 ## Step 9 — Reproducibility (How to Run)
-1. Open the notebook: `notebook/Sentiment_Analysis_Group06.ipynb`
-2. Ensure dataset is available at: `data/sentiment_train.csv`
+1. Open `Sentiment_Analysis_Group06.ipynb`
+2. Ensure `sentiment_train.csv` is in the same directory
 3. Run cells top-to-bottom to reproduce:
-   - preprocessing
+   - Data preprocessing
    - EDA
    - VADER baseline
    - LSTM training
-   - evaluation results
+   - Model evaluation
 
 ---
 
 ## Step 10 — Future Improvements
-- Train on a larger, more diverse dataset
-- Improve text preprocessing and handle sarcasm/irony
-- Add transformer-based models (BERT)
-- Deploy as a web app / API for real-time sentiment scoring
+- Train on larger and more diverse datasets
+- Improve handling of sarcasm and irony
+- Add transformer-based models (e.g., BERT)
+- Deploy as a web application or API for real-time sentiment analysis
 
+---
 
-The insights generated from this analysis can help restaurants identify customer
-pain points, monitor service quality, and prioritize improvements based on
-real customer feedback. This project demonstrates practical application of NLP
-and deep learning techniques in a real-world business context.
+The insights generated from this project help businesses identify customer pain
+points, monitor service quality, and prioritize improvements using real-world
+customer feedback.
 
