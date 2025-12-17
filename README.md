@@ -1,113 +1,66 @@
-![Project Cover](cover.png)
-
-# Sentiment Analysis – Restaurant Reviews
-
-## Overview
-This project performs end-to-end sentiment analysis on restaurant reviews using
-both a rule-based NLP model (VADER) and a deep learning model (LSTM).
-
 ---
 
-## Dataset
-- ~2,400 restaurant reviews
-- Features:
-  - Sentence (review text)
-  - Polarity (0 = Negative, 1 = Positive)
-- No missing values
+## Project Structure
 
-Dataset file:
-sentiment_train.csv
+All project files are organized as follows:
 
----
+sentiment-analysis/
+├── README.md
+├── cover.jpg
+│
+├── data/
+│   └── sentiment_train.csv
+│
+├── notebook/
+│   └── Sentiment_Analysis_Group06.ipynb
+│
+├── output/
+│   └── Sentiment_Analysis_Group06.html
+│
+├── reports/
+│   ├── Group-6-Sentiment_Analysis.pdf
+│   └── Project_Report_Big_Data.docx
+│
+└── presentation/
+    └── SENTIMENT_ANALYSIS_PRESENTATION.pdf
+## Access Project Files
 
-## Tools & Libraries
-- Python
-- Pandas, NumPy
-- NLTK
-- Scikit-learn
-- TensorFlow / Keras
+- 📊 Dataset:  
+  [sentiment_train.csv](data/sentiment_train.csv)
 
----
+- 📓 Jupyter Notebook:  
+  [Sentiment_Analysis_Group06.ipynb](notebook/Sentiment_Analysis_Group06.ipynb)
 
-## Project Workflow
+- 🌐 HTML Output:  
+  [Sentiment_Analysis_Group06.html](output/Sentiment_Analysis_Group06.html)
 
-### 1. Data Preprocessing (COMMON FOR BOTH MODELS)
-- Lowercasing text
-- Removing special characters and numbers
-- Tokenization
-- Stopword removal (custom handling for negations like "not")
-- Text normalization
+- 📄 Final Report (PDF):  
+  [Group-6-Sentiment_Analysis.pdf](reports/Group-6-Sentiment_Analysis.pdf)
 
----
+- 📊 Presentation:  
+  [SENTIMENT ANALYSIS PRESENTATION.pdf](presentation/SENTIMENT_ANALYSIS_PRESENTATION.pdf)
 
-## Model 1: VADER Sentiment Analysis
-VADER is a rule-based sentiment analysis tool designed for quick polarity
-classification.
+## Project Description
 
-### Why VADER?
-- Fast baseline model
-- Works well for short reviews
-- No training required
+This project focuses on analyzing customer sentiment from restaurant reviews using
+Natural Language Processing (NLP) and Machine Learning techniques. The objective is
+to automatically classify customer feedback as **positive or negative**, enabling
+businesses to better understand customer satisfaction and improve decision-making.
 
-### Steps
-- Applied VADER compound polarity scores
-- Classified reviews as positive or negative
-- Evaluated using confusion matrix
+The project implements two complementary approaches:
 
-### Results
-- Accuracy: ~76%
-- High precision, moderate recall
-- Struggles with complex sentence context
+- **VADER (Valence Aware Dictionary and Sentiment Reasoner)** — a rule-based NLP model
+  used as a fast baseline for sentiment classification.
+- **LSTM (Long Short-Term Memory)** — a deep learning model designed to capture
+  contextual and sequential patterns in text data for improved sentiment prediction.
 
----
+The end-to-end workflow includes data preprocessing, exploratory data analysis,
+model training, evaluation, and result interpretation. The final outputs provide
+clear insights into customer sentiment distribution and highlight the strengths
+and limitations of both modeling approaches.
 
-## Model 2: LSTM (Deep Learning)
-LSTM was used to capture contextual and sequential patterns in customer reviews.
+The insights generated from this analysis can help restaurants identify customer
+pain points, monitor service quality, and prioritize improvements based on
+real customer feedback. This project demonstrates practical application of NLP
+and deep learning techniques in a real-world business context.
 
-### Why LSTM?
-- Handles long-term dependencies
-- Better understanding of negations and context
-- Suitable for NLP tasks
-
-### Steps
-- Text vectorization (Bag of Words + Tokenization)
-- Sequence padding
-- LSTM model with embedding and dropout layers
-- Binary sentiment classification
-
-### Results
-- Test Accuracy: ~81%
-- Better performance than VADER
-- Improved handling of complex reviews
-
----
-
-## Model Comparison
-| Model | Accuracy | Strength |
-|------|---------|----------|
-| VADER | ~76% | Fast, simple baseline |
-| LSTM | ~81% | Better contextual understanding |
-
----
-
-## Key Insights
-- Customer sentiment is nearly balanced
-- Deep learning outperforms rule-based NLP
-- Dataset size limits generalization
-- Proper preprocessing significantly improves results
-
----
-
-## Project Files
-- Notebook: Sentiment_Analysis_Group06.ipynb
-- HTML Output: Sentiment_Analysis_Group06.html
-- Report: Group-6-Sentiment_Analysis.pdf
-- Presentation: SENTIMENT ANALYSIS PRESENTATION.pdf
-- Dataset: sentiment_train.csv
-
----
-
-## Future Improvements
-- Train on larger datasets
-- Add transformer models (BERT)
-- Deploy model as an API or dashboard
