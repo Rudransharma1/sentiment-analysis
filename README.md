@@ -22,20 +22,23 @@ All project files are currently stored in the repository root:
 
 ## Access Project Files
 
-- 📊 **Dataset**  
-  [sentiment_train.csv](sentiment_train.csv)
+- 📊 Dataset  
+  [Meta-Data.csv](Meta-Data.csv)
 
-- 📓 **Jupyter Notebook**  
-  [Sentiment_Analysis_Group06.ipynb](Sentiment_Analysis_Group06.ipynb)
+- 📓 Code / Notebook  
+  [Code](Code)
 
-- 🌐 **HTML Output**  
-  [Sentiment_Analysis_Group06.html](Sentiment_Analysis_Group06.html)
+- 🌐 HTML Output  
+  [Sentiment_analysis.html](Sentiment_analysis.html)
 
-- 📄 **Final Report (PDF)**  
-  [Group-6-Sentiment_Analysis.pdf.pdf](Group-6-Sentiment_Analysis.pdf.pdf)
+- 📄 Backend Documentation  
+  [Backend.pdf](Backend.pdf)
 
-- 📊 **Presentation**  
-  [SENTIMENT_ANALYSIS_PRESENTATION.pdf.pdf](SENTIMENT_ANALYSIS_PRESENTATION.pdf.pdf)
+- 📈 Graphs & Visuals  
+  [Graphs.pdf](Graphs.pdf)
+
+- 📝 Final Report  
+  [Reports.docx](Reports.docx)
 
 ---
 
