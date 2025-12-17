@@ -1,3 +1,4 @@
+![Project Cover](COVER.jpg)
 
 ## Project Structure
 
