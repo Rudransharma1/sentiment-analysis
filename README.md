@@ -26,22 +26,23 @@ sentiment-analysis/
 ## Access Project Files
 
 - 📊 Dataset:  
-  [sentiment_train.csv](data/sentiment_train.csv)
+  [sentiment_train.csv](sentiment_train.csv)
 
 - 📓 Jupyter Notebook:  
-  [Sentiment_Analysis_Group06.ipynb](notebook/Sentiment_Analysis_Group06.ipynb)
+  [Sentiment_Analysis_Group06.ipynb](Sentiment_Analysis_Group06.ipynb)
 
 - 🌐 HTML Output:  
-  [Sentiment_Analysis_Group06.html](output/Sentiment_Analysis_Group06.html)
+  [Sentiment_Analysis_Group06.html](Sentiment_Analysis_Group06.html)
 
 - 📄 Final Report (PDF):  
-  [Group-6-Sentiment_Analysis.pdf](reports/Group-6-Sentiment_Analysis.pdf)
+  [Group-6-Sentiment_Analysis.pdf](Group-6-Sentiment_Analysis.pdf)
 
 - 📊 Presentation:  
-  [SENTIMENT ANALYSIS PRESENTATION.pdf](presentation/SENTIMENT_ANALYSIS_PRESENTATION.pdf)
+  [SENTIMENT_ANALYSIS_PRESENTATION.pdf](SENTIMENT_ANALYSIS_PRESENTATION.pdf)
 
 ## Project Description
-## Detailed Project Description (End-to-End)
+
+
 
 This project builds an end-to-end sentiment analysis pipeline on restaurant review text to classify sentiment as **Positive** or **Negative**. The goal is to transform unstructured customer feedback into measurable insights that can support business decisions (service improvements, complaint tracking, and customer experience monitoring).
 
